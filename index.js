@@ -71,12 +71,12 @@ function makeButtons(){
 }
 function makeGridMob(){
     console.log("i ran");
-    makeGridPC(bodyHeight-114, bodyWidth,10);
+    makeGridPC(bodyHeight-114, bodyWidth,15);
     makeButtons();
     document.getElementById("btns").style.marginLeft=bodyWidth/2-56.685; 
     document.getElementById("btns").style.marginTop=5;
 }
-if(bodyWidth<=484)
+if(bodyWidth<bodyHeight)
 makeGridMob();
 else
 makeGridPC(bodyHeight,bodyWidth,30);
