@@ -38,9 +38,10 @@ function makeGridPC(het,wet,size){
 function makeButtons(){
     document.body.innerHTML+="<table id=\"btns\"></table>";
     for(var i = 0; i<3; i++){
-        document.getElementById("btns").innerHTML+="<tr id=\"btRow"+i+"\" style =\"height:37.79px;\">";
+        var height = bodyHeight/10;
+        document.getElementById("btns").innerHTML+="<tr id=\"btRow"+i+"\" style =\"height:"+height+";\">";
         for(var j = 0; j<3; j++){
-            document.getElementById("btRow"+i).innerHTML+="<th id=\"bt"+i+""+j+"\" style =\"width:37.79px;\"></th>";
+            document.getElementById("btRow"+i).innerHTML+="<th id=\"bt"+i+""+j+"\" style =\"width:"+height+";\"></th>";
         }
     }
     var temp ="burlywood";
@@ -71,9 +72,9 @@ function makeButtons(){
 }
 function makeGridMob(){
     console.log("i ran");
-    makeGridPC(bodyHeight-114, bodyWidth,15);
+    makeGridPC(bodyHeight-bodyHeight/10*3, bodyWidth,bodyWidth/15);
     makeButtons();
-    document.getElementById("btns").style.marginLeft=bodyWidth/2-56.685; 
+    document.getElementById("btns").style.marginLeft=bodyWidth/2-document.getElementById("btns").offsetWidth/2; 
     document.getElementById("btns").style.marginTop=5;
 }
 if(bodyWidth<bodyHeight)
